@@ -10,6 +10,9 @@ fn main() {
             fizbuz_store.push_str("buzz");
         }
 
+        if i == 16 {
+            break;
+        }
         println!("{}-{}", i, fizbuz_store);
         fizbuz_store = "".to_string();
     }
