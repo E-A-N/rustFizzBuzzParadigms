@@ -1,0 +1,57 @@
+# Rust build artifacts
+/target/
+
+# Incremental compilation files
+**/*.rs.bk
+**/*.rs~
+
+# IDEs and editors
+# VS Code
+.vscode/
+*.code-workspace
+
+# IntelliJ / CLion / RustRover
+.idea/
+*.iml
+
+# macOS
+.DS_Store
+
+# Linux
+*~
+
+# Windows
+Thumbs.db
+Desktop.ini
+
+# Byebug (for debugging in rare mixed setups)
+.byebug_history
+
+# Cargo specific
+Cargo.lock # If it's a library, consider ignoring Cargo.lock
+/.cargo/
+
+# Logs
+*.log
+
+# Coverage
+/coverage/
+*.profraw
+*.profdata
+
+# Test output
+/tests/output/
+
+# Git backup files
+*.orig
+
+# Optional: backup build tools
+/target/
+/Cargo.lock
+
+# Optional: ignore binary executables
+*.exe
+*.dll
+*.so
+*.dylib
+*.bin
