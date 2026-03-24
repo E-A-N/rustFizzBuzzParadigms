@@ -1,21 +1,30 @@
 struct FizzBuzzStruct {
-    numbers: [i32; 5],
-    results: Vec<bool>,
-    start: fn(&mut FizzBuzzStruct) -> &mut FizzBuzzStruct,
+    amount: i32,
+    results: Vec<String>,
+    operate: fn(&mut FizzBuzzStruct) -> &mut FizzBuzzStruct,
 }
 
 fn fizz_buzz_operation(this: &mut FizzBuzzStruct) -> &mut FizzBuzzStruct {
-    this.results.push(true);
+    for n in 1..=this.amount {
+        let mut stringy : String = format!("{} ", n);
+        if n % 3 == 0{
+            stringy.push_str("fizz");
+        }
+
+        if n % 5 == 0{
+            stringy.push_str("buzz");
+        }
+        this.results.push(stringy);
+    }
     println!("{:?}", this.results);
     return this;
 }
 
 fn main() {
     let mut fbs = FizzBuzzStruct {
-        numbers: [1,2,3,4,5],
-        results: vec![false],
-        start: fizz_buzz_operation,
+        amount: 100,
+        results: vec![],
+        operate: fizz_buzz_operation,
     };
-
-    (fbs.start)(&mut fbs);
+    (fbs.operate)(&mut fbs);
 }
