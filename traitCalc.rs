@@ -1,29 +1,30 @@
-enum Taits {
-    long,
-    tough,
-    magic
+enum SquadTraits {
+    Strong,
+    Tough,
+    Magic
 }
 
-enum Stat_Tpes {
-    attack,
-    defense,
-    magic,
-    magic_defense,
-    speed,
-    t
+enum StatTypes {
+    Attack,
+    Defense,
+    Magic,
+    MagicDefense,
+    Speed,
 }
 
-impl Taits {
-    fn all () -> &'static [Taits] {
+impl SquadTraits {
+    fn all () -> &'static [SquadTraits] {
         return &[
-            Taits::long,
-            Taits::tough,
-            Taits::magic,
+            SquadTraits::Strong,
+            SquadTraits::Tough,
+            SquadTraits::Magic,
         ]
     }
 
 }
 
 fn main(){
-   println!("Rust says Hello to TutorialsPoint !!");
+    let total_traits: usize = SquadTraits::all().len();
+    println!("Rust says Hello to TutorialsPoint !!");
+    println!("All squad traits: {}", total_traits);
 }
