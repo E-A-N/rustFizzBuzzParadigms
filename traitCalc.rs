@@ -4,15 +4,22 @@ enum Taits {
     magic
 }
 
+enum Stat_Tpes {
+    attack,
+    defense,
+    magic,
+    magic_defense,
+    speed,
+    t
+}
+
 impl Taits {
-    fn all_taits () -> (Taits, 3) {
-        let result : (Taits, 3) = [
+    fn all () -> &'static [Taits] {
+        return &[
             Taits::long,
             Taits::tough,
             Taits::magic,
         ]
-
-        return result;
     }
 
 }
